@@ -61,15 +61,17 @@ def crawl_pic(url):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0',
         'Accept-Language': 'en-US, en;q=0.5'
     }
-    response = requests.get(url, headers=headers)
-    soup = BeautifulSoup(response.content, 'html.parser')
-    results = soup.find_all('div', {'class': 'imgTagWrapper'})
-    img_tag = results[0].find('img')
-    first_url = img_tag['src']
-    response = requests.get(first_url, headers=headers)
-    img = Image.open(BytesIO(response.content))
-    img.show()
-
+    try:
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        results = soup.find_all('div', {'class': 'imgTagWrapper'})
+        img_tag = results[0].find('img')
+        first_url = img_tag['src']
+        response = requests.get(first_url, headers=headers)
+        img = Image.open(BytesIO(response.content))
+        img.show()
+    except:
+        print("crwaling is blocked, picture load failed")
 def open_file(file):
     '''
         Funciton that used for open csv file, which is also the cache file
