@@ -5,5 +5,5 @@ Finally, it will present the product name, its URL link and a picture crawling f
 
 Unexpected situations:
 
-When crawling files or images from Amazon, you may be blocked. In this case, a message indicating that the content cannot be read will be displayed.
-If the request you made does not have a corresponding jacket to match, please try again by broadening the scope.
+1.When crawling files or images from Amazon, you may be blocked. In this case, a message indicating that the content cannot be read will be displayed.
+2.If the request you made does not have a corresponding jacket to match, please try again by broadening the scope.
